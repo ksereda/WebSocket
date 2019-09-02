@@ -146,19 +146,18 @@ button.accent {
 }
 
 .chat-container {
-    max-width: 700px;
+    border: 2px solid #d5dbdb;
+    background-color:  #d5dbdb ;
+    max-width: 500px;
     margin-left: auto;
     margin-right: auto;
-    /*background-color: #fff;*/
-    /*box-shadow: 0 1px 11px rgba(0, 0, 0, 0.27);*/
+
     margin-top: 30px;
     height: calc(100% - 60px);
     max-height: 600px;
     position: relative;
-    background: lightblue;
-    box-shadow: 0 1px 30px rgba(0, 0, 0, 0.27);
     border-radius: 50px;
-
+    box-shadow: 0 1px 30px rgba(0, 0, 0, 0.27);
 }
 
 #chat-page ul {
