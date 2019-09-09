@@ -24,8 +24,9 @@ public class MyWebSocketHandler implements WebSocketHandler {
 	// // Then we send the saved email address (which is returned from repository.save() method) to the client.
 	@Override
 	public Mono<Void> handle(WebSocketSession session) {
-		return session.send(
-				session.receive().map(email -> new Users(email.getPayloadAsText())).flatMap(repository::save)
+		return session
+				.send(session.receive()
+						.map(email -> new Users(email.getPayloadAsText())).flatMap(repository::save)
 						.map(us -> session.textMessage(us.getEmail())));
 	}
 
