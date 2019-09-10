@@ -30,7 +30,7 @@ public class MyWebSocketHandler {
                         Flux.interval(Duration.ofSeconds(1))
                                 //  Finally we run it through a map method, turning it into a text message to be sent.
                                 //  This will result in a Flux, which is passed as an argument to the session.send() method, having it stream to the user.
-                                .map(n -> n.toString())
+                                .map(Object::toString)   // this is analog: n -> n.toString()
                                 .map(session::textMessage)
                 ).and(session.receive()    // session.receive() method is called, which will actually return a Flux of the websocket messages
                         .map(WebSocketMessage::getPayloadAsText)   // The flux is mapped through the WebsocketMessage::getPayloadAsText method, which will give us the payload message
@@ -46,8 +46,7 @@ public class MyWebSocketHandler {
         // Create an instance of SimpleUrlHandlerMapping, and add Mappings for URL to WebSocketHandler exchanges.
         SimpleUrlHandlerMapping mapping = new SimpleUrlHandlerMapping();
         mapping.setUrlMap(Collections.singletonMap("/ws/test", webSocketHandler()));
-        mapping.setCorsConfigurations(Collections.singletonMap("*", new CorsConfiguration().applyPermitDefaultValues()));
-//        mapping.setOrder(10);
+        mapping.setCorsConfigurations(Collections.singletonMap("*", new CorsConfiguration().applyPermitDefaultValues()));  // for CORS
         mapping.setOrder(Ordered.HIGHEST_PRECEDENCE);
         return mapping;
     }
