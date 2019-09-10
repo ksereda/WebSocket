@@ -14,8 +14,10 @@ ___
 
 #### subscribe-us
 
+This is Reactive application (Spring WebFlux in functional style) + WebSocket
+
 The user must indicate his email.
-The email will be saved to the database and then displayed on the UI.
+The email will be saved to the database (MongoDB) and then displayed on the UI.
 
 ___
 
@@ -24,3 +26,11 @@ ___
 This app using WebSocket + SpringBoot.
 
 You need create your nickname and upload image (logo).
+
+___
+
+#### client-server
+
+This is Reactive application (Spring WebFlux in functional style) + WebSocket.
+
+Client in 2 threads sends 8 messages to the server and the server responds to the client.
