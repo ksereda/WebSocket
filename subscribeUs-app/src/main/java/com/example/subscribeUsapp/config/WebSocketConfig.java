@@ -26,12 +26,14 @@ public class WebSocketConfig {
 		Map<String, MyWebSocketHandler> map = new HashMap<>();
 		map.put("/subscribe", myWebSocketHandler);
 
+		// Create an instance of SimpleUrlHandlerMapping, and add Mappings for URL to WebSocketHandler exchanges.
 		SimpleUrlHandlerMapping mapping = new SimpleUrlHandlerMapping();
 		mapping.setUrlMap(map);
 		mapping.setOrder(Ordered.HIGHEST_PRECEDENCE);
 		return mapping;
 	}
 
+	// WebSocketHandlerAdapter: to handle our web socket handshake, upgrade, and other connection details.
 	@Bean
 	public WebSocketHandlerAdapter handlerAdapter(WebSocketService webSocketService) {
 		return new WebSocketHandlerAdapter(webSocketService);
