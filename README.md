@@ -2,35 +2,49 @@
 
 #### chat-service
 
-This is online chat with SpringBoot and WebSocket
+This is online chat with `SpringBoot` + `WebSocket`.
 
 ___
 
 #### hello-service
 
-This example from documentation Baeldung
+This app using `SpringBoot` + `WebSocket`.
+
+This example from documentation Baeldung.
+
+___
+
+#### displaylogo-app
+
+This app using `SpringBoot` + `WebSocket`.
+
+You need create your nickname and upload image (logo).
 
 ___
 
 #### subscribe-us
 
-This is Reactive application (Spring WebFlux in functional style) + WebSocket
+This is Reactive application (`Spring WebFlux` in functional style) + `WebSocket`
 
 The user must indicate his email.
 The email will be saved to the database (MongoDB) and then displayed on the UI.
 
 ___
 
-#### displaylogo-app
+#### client-server
 
-This app using WebSocket + SpringBoot.
+This is Reactive application (`Spring WebFlux` in functional style) + `WebSocket`
 
-You need create your nickname and upload image (logo).
+Client in 2 threads sends 8 messages to the server and the server responds to the client.
 
 ___
 
-#### client-server
+#### displayMessage-service
 
-This is Reactive application (Spring WebFlux in functional style) + WebSocket.
+This is Reactive application (`Spring WebFlux` in functional style) + `WebSocket`
 
-Client in 2 threads sends 8 messages to the server and the server responds to the client.
+Start application and go to
+
+    http://localhost:8080
+    
+Toy can send some message and you will see this message in display area.
